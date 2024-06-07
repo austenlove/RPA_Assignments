@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>406,1023</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1131,1195</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessDT_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,7 +90,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1-2. 상가업소번호, 도로명주소, 신우편번호만 남긴다.&#xA;2. &quot;추출한 우편번호&quot;, &quot;일치여부&quot; 컬럼을 추가한다.&#xD;&#xA;&#xD;&#xA;[필드구성]&#xD;&#xA;0 : 상가업소번호&#xD;&#xA;1 : 도로명주소&#xD;&#xA;2 : 신우편번호&#xD;&#xA;3 : 추출한 우편번호&#xD;&#xA;4 : 일치여부&#xD;&#xA;5. 검색된 주소 (비교를 위해 임의 생성 / 삭제 예정)" DisplayName="ProcessDT |  | Sequence" sap:VirtualizedContainerService.HintSize="416,958" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1-2. 상가업소번호, 도로명주소, 신우편번호만 남긴다.&#xA;2. &quot;추출한 우편번호&quot;, &quot;일치여부&quot; 컬럼을 추가한다.&#xA;&#xA;[필드구성]&#xA;0 : 상가업소번호&#xA;1 : 도로명주소&#xA;2 : 신우편번호&#xA;3 : 추출한 우편번호&#xA;4 : 일치여부&#xA;5 : 검색된 주소 (비교를 위해 임의 생성 / 삭제 예정)" DisplayName="ProcessDT |  | Sequence" sap:VirtualizedContainerService.HintSize="416,1130" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,10 +127,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="기록 전 삭제 필요" ColumnName="검색된 주소" DataTable="[out_DT상가업소정보_가공]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="354,79" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="검증 단계에서 도로명주소 vs 검색된주소 비교를 위한 임시 컬럼 생성 (엑셀 기록 전 삭제 필요)" ColumnName="검색된 주소" DataTable="[out_DT상가업소정보_가공]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="354,251" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>

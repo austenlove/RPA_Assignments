@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1033,2409</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1087,2499</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01_Init_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. 메일로 전달된 엑셀 파일을 IMAP 메일로 수신한다. &#xA;2. Input, Output 시트의 데이터를 읽어온다. &#xA;" DisplayName="_01_Init" sap:VirtualizedContainerService.HintSize="636,2344" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. 메일로 전달된 엑셀 파일을 IMAP 메일로 수신한다. &#xA;2. Input, Output 시트의 데이터를 읽어온다. &#xA;" DisplayName="_01_Init" sap:VirtualizedContainerService.HintSize="636,2434" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
@@ -133,7 +133,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="rpa.sj.jeong@gmail.com로부터 받은 메일 중 가장 최근 메일을 읽어와서 첨부파일 저장&#xA;**조건에 해당하는 메일이 없을 경우에 대한 예외처리 필요" DisplayName="Read Email &amp; Get Data | Sequence" sap:VirtualizedContainerService.HintSize="574,1428" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap2010:Annotation.AnnotationText="rpa.sj.jeong@gmail.com로부터 받은 메일 중 가장 최근 메일을 읽어와서 첨부파일 저장&#xA;**조건에 해당하는 메일이 없을 경우에 대한 예외처리 필요" DisplayName="Read Email &amp; Get Data | Sequence" sap:VirtualizedContainerService.HintSize="574,1518" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,7 +185,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:SaveMailAttachments>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="UiPath 작업 폴더내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행" DisplayName="원본파일 복사한 후 폴더링 | Sequence" sap:VirtualizedContainerService.HintSize="512,631" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence sap2010:Annotation.AnnotationText="UiPath 작업 폴더내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;*파일 경로&#xD;&#xA;원본파일 : RPA_Repository &gt; 03.시험결과집계 &gt; 1.요청&#xD;&#xA;작업파일 : RPA_Repository &gt; 03.시험결과집계 &gt; 2.작업&#xD;&#xA;최종파일 : RPA_Repository &gt; 03.시험결과집계 &gt; 3.결과" DisplayName="원본파일 복사한 후 폴더링 | Sequence" sap:VirtualizedContainerService.HintSize="512,721" sap2010:WorkflowViewState.IdRef="Sequence_12">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
         </Sequence.Variables>

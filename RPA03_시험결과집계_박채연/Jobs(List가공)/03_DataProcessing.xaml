@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1003,1588</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1087,1588</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_03_DataProcessing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -191,6 +191,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RemoveDataColumn>
-    <ui:WriteRange AddHeaders="False" DataTable="[io_DTOutput]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="626,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Output" StartingCell="A3" WorkbookPath="시험결과집계_Temp_박채연.xlsx" />
+    <ui:WriteRange AddHeaders="True" DataTable="[io_DTOutput]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="626,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Output" StartingCell="A2" WorkbookPath="C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\03.시험결과집계\2.작업\시험결과집계_Temp_박채연.xlsx" />
   </Sequence>
 </Activity>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1069,1328" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1129,1539" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -87,14 +87,23 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="[과제개요]&#xA;1. 메일로 전달된 엑셀 파일을 IMAP 메일로 수신한다. &#xA;2. Input, Output 시트의 데이터를 읽어온다. &#xA;3. Input 시트의 데이터를 참고하여 Output 시트의 ＂시험과목” 컬럼의 값을 입력한다.&#xA;4. 기준테이블 시트의 데이터를 참고하여 Output 시트의 “합격여부” 컬럼의 값을 입력한다.&#xA;5. 과목별 합격률을 산출하여 Output 시트에 입력한다.&#xA;6. 최종 완성된 엑셀 파일을 SMTP 메일로 첨부파일과 함께 전송한다.&#xA;" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="512,1263" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="[과제개요]&#xA;1. 메일로 전달된 엑셀 파일을 IMAP 메일로 수신한다. &#xA;2. Input, Output 시트의 데이터를 읽어온다. &#xA;3. Input 시트의 데이터를 참고하여 Output 시트의 ＂시험과목” 컬럼의 값을 입력한다.&#xA;4. 기준테이블 시트의 데이터를 참고하여 Output 시트의 “합격여부” 컬럼의 값을 입력한다.&#xA;5. 과목별 합격률을 산출하여 Output 시트에 입력한다.&#xA;6. 최종 완성된 엑셀 파일을 SMTP 메일로 첨부파일과 함께 전송한다.&#xA;" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="574,1474" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
-      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="DTInput" />
-      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="DT기준테이블" />
-      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="DTOutput" />
-      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="DTPassRate" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="dtInput" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="dt기준테이블" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="dtOutput" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="dtPassRate" />
+      <Variable x:TypeArguments="s:String[]" Name="arr과목" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_요청" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_작업" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_결과" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtSheet가공">
+        <Variable.Default>
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="new System.Data.DataTable" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -102,14 +111,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Jobs(DT가공) | Sequence" sap:VirtualizedContainerService.HintSize="450,980" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Jobs(DT가공) | Sequence" sap:VirtualizedContainerService.HintSize="512,1206" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,57" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;❤️RPA03 시험결과 집계 시작❤️&quot;]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;❤️RPA03 시험결과 집계 시작❤️&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -117,36 +126,137 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="UiPath_Gmail" CacheStrategy="None" DisplayName="Get Credential" FolderPath="mangoperry2015@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sstrPW]" Username="[strID]" />
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\01_Init.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Jobs(DT가공)\01_Init.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\00_Init_Variables.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Jobs(DT가공)\00_Init_Variables.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strID">[strID]</InArgument>
-          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">[sstrPW]</InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT기준테이블">[DT기준테이블]</OutArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DTOutput">[DTOutput]</OutArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DTInput">[DTInput]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_strID">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strID" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_sstrPW">
+            <VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="s:String[]" x:Key="out_arr과목">
+            <VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="arr과목" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_작업">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_결과">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_요청">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_요청" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtSheet가공">
+            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtSheet가공" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtOutput">
+            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtOutput" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtPassRate">
+            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtPassRate" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\02_DataProcessing.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Jobs(DT가공)\02_DataProcessing.xaml">
+      <Sequence DisplayName="데이터 처리 및 기록 | Sequence" sap:VirtualizedContainerService.HintSize="450,691" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\01_LoadData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Jobs(DT가공)\01_LoadData.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_strID">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
+            </InArgument>
+            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
+              <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_요청">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_요청" />
+            </InArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt기준테이블">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt기준테이블" />
+            </OutArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtInput">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtInput" />
+            </OutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\02_DataProcessing.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Jobs(DT가공)\02_DataProcessing.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt기준테이블">
+              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt기준테이블" />
+            </InArgument>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtInput">
+              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtInput" />
+            </InArgument>
+            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtOutput">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtOutput" />
+            </InOutArgument>
+            <InArgument x:TypeArguments="s:String[]" x:Key="in_arr과목">
+              <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="arr과목" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
+            </InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\03_Statistics.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Jobs(DT가공)\03_Statistics.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="s:String[]" x:Key="in_arr과목">
+              <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="arr과목" />
+            </InArgument>
+            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtOutput">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtOutput" />
+            </InOutArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
+            </InArgument>
+            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtPassRate">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtPassRate" />
+            </InOutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\04_EndProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Jobs(DT가공)\04_EndProcess.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
+            </InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">
+              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
+            </InArgument>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtOutput">
+              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtOutput" />
+            </InArgument>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtPassRate">
+              <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtPassRate" />
+            </InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </Sequence>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\01_SendSMTPMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Mail\01_SendSMTPMail.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT기준테이블">[DT기준테이블]</InArgument>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DTInput">[DTInput]</InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DTOutput">[DTOutput]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_strID">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
+          </InArgument>
+          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
+            <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
+          </InArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtSheet가공">
+            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtSheet가공" />
+          </InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\03_Statistics.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Jobs(DT가공)\03_Statistics.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DTOutput">[DTOutput]</InOutArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DTPassRate">[DTPassRate]</OutArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(DT가공)\04_EndProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Jobs(DT가공)\04_EndProcess.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_strID">[strID]</InArgument>
-          <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">[sstrPW]</InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,48" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;❤️RPA03 시험결과 집계 종료❤️&quot;]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;❤️RPA03 시험결과 집계 종료❤️&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -155,7 +265,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
     </Sequence>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,48" sap2010:WorkflowViewState.IdRef="CommentOut_8">
       <ui:CommentOut.Body>
         <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="512,136" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
@@ -209,12 +319,8 @@
             </ui:InvokeWorkflowFile>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs(List가공)\05_EndProcess.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Jobs(List가공)\05_EndProcess.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strID">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
-                </InArgument>
-                <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
-                  <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strID">[strID]</InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">[sstrPW]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;❤️RPA03 시험결과 집계 종료❤️&quot;]">

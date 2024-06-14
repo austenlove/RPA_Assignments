@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1129,2276</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1136,2276</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_04_Statistics_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -127,9 +127,9 @@
             </ActivityAction.Argument>
             <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="784,1763" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <Sequence.Variables>
-                <Variable x:TypeArguments="x:Int32" Name="passCount" />
-                <Variable x:TypeArguments="x:Int32" Name="totalCount" />
-                <Variable x:TypeArguments="x:Double" Name="passRate" />
+                <Variable x:TypeArguments="x:Int32" Name="intPassCount" />
+                <Variable x:TypeArguments="x:Int32" Name="intTotalCount" />
+                <Variable x:TypeArguments="x:Double" Name="doublePassRate" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -141,7 +141,7 @@
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Int32">[totalCount]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Int32">[intTotalCount]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
@@ -149,7 +149,7 @@
                     </ui:AssignOperation>
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Int32">[passCount]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Int32">[intPassCount]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
@@ -192,10 +192,10 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_2">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Int32">[totalCount]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Int32">[intTotalCount]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="x:Int32">[totalCount + 1]</InArgument>
+                                <InArgument x:TypeArguments="x:Int32">[intTotalCount + 1]</InArgument>
                               </Assign.Value>
                             </Assign>
                             <If Condition="[currentRow(&quot;합격여부&quot;).ToString.Equals(&quot;합격&quot;)]" DisplayName="currentRow(&quot;합격여부&quot;) = &quot;합격&quot;일 경우 passCount+1 | If" sap:VirtualizedContainerService.HintSize="530,379" sap2010:WorkflowViewState.IdRef="If_3">
@@ -208,10 +208,10 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
                                     <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Int32">[passCount]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:Int32">[intPassCount]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Int32">[passCount + 1]</InArgument>
+                                      <InArgument x:TypeArguments="x:Int32">[intPassCount + 1]</InArgument>
                                     </Assign.Value>
                                   </Assign>
                                 </Sequence>
@@ -255,10 +255,10 @@
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
                       <ui:AssignOperation.To>
-                        <OutArgument x:TypeArguments="x:Double">[passRate]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Double">[doublePassRate]</OutArgument>
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
-                        <InArgument x:TypeArguments="x:Double">[(passCount / totalCount) * 100]</InArgument>
+                        <InArgument x:TypeArguments="x:Double">[(intPassCount / intTotalCount) * 100]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                   </scg:List>
@@ -270,7 +270,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:MultipleAssign>
-              <ui:LogMessage sap2010:Annotation.AnnotationText="합격률 확인용 로그" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="722,88" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;✅합격률: &quot; + currentSubject + &quot; / &quot; + passRate.ToString]">
+              <ui:LogMessage sap2010:Annotation.AnnotationText="합격률 확인용 로그" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="722,88" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;✅합격률: &quot; + currentSubject + &quot; / &quot; + doublePassRate.ToString]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -279,7 +279,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:LogMessage>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {currentSubject.ToString(), passRate.ToString + &quot;%&quot;}]" DataTable="[io_dtPassRate]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="722,209" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {currentSubject.ToString(), doublePassRate.ToString + &quot;%&quot;}]" DataTable="[io_dtPassRate]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="722,209" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>

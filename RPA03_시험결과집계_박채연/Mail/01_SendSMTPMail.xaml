@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1129,4631</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1136,2756</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01_SendSMTPMail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="최종 완성된 엑셀 파일을 SMTP 메일로 첨부파일과 함께 전송한다.&#xA;*메일 본문에는 완성된 Output 시트의 내용을 테이블 형태로 표기해준다." DisplayName="_01_SendSMTPMail" sap:VirtualizedContainerService.HintSize="857,4566" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="최종 완성된 엑셀 파일을 SMTP 메일로 첨부파일과 함께 전송한다.&#xA;*메일 본문에는 완성된 Output 시트의 내용을 테이블 형태로 표기해준다." DisplayName="_01_SendSMTPMail" sap:VirtualizedContainerService.HintSize="698,2691" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strContentHTML" />
       <Variable x:TypeArguments="x:String" Name="strRowHTML" />
@@ -133,7 +133,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="- 최종 파일에서 읽어온 출력용 데이터를 DTSheet에 저장&#xD;&#xA;- Excel Process Scope (모던 액티비티) : Excel 팝업 방지 및 매크로 설정을 허용" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="795,1765" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="- 최종 파일에서 읽어온 출력용 데이터를 DTSheet에 저장&#xA;- Excel Process Scope (모던 액티비티) : Excel 팝업 방지 및 매크로 설정을 허용" DisplayName="출력용 데이터 가져오기 | Excel Process Scope" sap:VirtualizedContainerService.HintSize="636,1765" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
@@ -158,7 +158,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ReadRangeX DisplayName="Read Range" HasHeaders="False" sap:VirtualizedContainerService.HintSize="444,192" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Output&quot;).Range(&quot;A3:H19&quot;)]" ReadFormatting="DisplayValue" SaveTo="[dtSheet원본]" VisibleOnly="False">
+                    <ueab:ReadRangeX DisplayName="Read Range" HasHeaders="False" sap:VirtualizedContainerService.HintSize="444,192" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Output&quot;)]" ReadFormatting="DisplayValue" SaveTo="[dtSheet원본]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,7 +177,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ueab:ExcelApplicationCard>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtSheet원본]" DisplayName="dtSheet원본 =&gt; dtSheet가공 으로 복사하기 | For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="540,493" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtSheet원본]" DisplayName="dtSheet원본 =&gt; dtSheet가공으로 복사하기 | For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="540,493" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
@@ -205,6 +205,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
@@ -254,7 +255,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="HTML 본문 변수 생성&#xA;&#xA;- strContentHTML : 전체 HTML 본문 변수&#xA;- strRowHTML : 반복문을 순회하며 row값에 대한 HTML을 수집하는 변수" DisplayName="HTML 본문 변수 생성 | Multiple Assign" sap:VirtualizedContainerService.HintSize="795,251" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="HTML 본문 변수 생성&#xA;&#xA;- strContentHTML : 전체 HTML 본문 변수&#xA;- strRowHTML : 반복문을 순회하며 row값에 대한 HTML을 수집하는 변수" DisplayName="HTML 본문 변수 생성 | Multiple Assign" sap:VirtualizedContainerService.HintSize="636,251" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -285,7 +286,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <Sequence sap2010:Annotation.AnnotationText="DTSheet가공의 내용을 HTML 형태로 변환한 변수 생성" DisplayName="본문에 포함할 HTML 생성 | Sequence" sap:VirtualizedContainerService.HintSize="795,2245" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence sap2010:Annotation.AnnotationText="DTSheet가공의 내용을 HTML 형태로 변환한 변수 생성" DisplayName="본문에 포함할 HTML 생성 | Sequence" sap:VirtualizedContainerService.HintSize="636,370" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -293,10 +294,10 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="테이블 헤더 추가 | Sequence" sap:VirtualizedContainerService.HintSize="733,825" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence DisplayName="테이블 헤더 추가 | Sequence" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -380,10 +381,10 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:MultipleAssign>
       </Sequence>
-      <Sequence DisplayName="테이블 바디 추가 | Sequence" sap:VirtualizedContainerService.HintSize="733,1164" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence DisplayName="테이블 바디 추가 | Sequence" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_11">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -497,7 +498,7 @@
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
       </Sequence>
-      <Assign sap:VirtualizedContainerService.HintSize="733,105" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Assign_5">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strContentHTML]</OutArgument>
         </Assign.To>
@@ -512,7 +513,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
     </Sequence>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;RPA03 시험결과집계 파일과 시트 내용입니다.&lt;br&gt;&lt;br&gt;&quot; + strContentHTML]" DisplayName="Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="795,175" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="RPA03_시험결과집계_박채연(본문 HTML 추가)" To="mangoperry2015@gmail.com">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;RPA03 시험결과집계 파일과 시트 내용입니다.&lt;br&gt;&lt;br&gt;&quot; + strContentHTML]" DisplayName="Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="636,175" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="RPA03_시험결과집계_박채연(본문 HTML 추가)" To="mangoperry2015@gmail.com">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\03.시험결과집계\3.결과\시험결과집계_Temp_박채연.xlsx</InArgument>

@@ -5,11 +5,14 @@
     <x:Property Name="in_sstrPW" Type="InArgument(ss:SecureString)" />
     <x:Property Name="out_mailMessages" Type="OutArgument(scg:List(snm:MailMessage))" />
     <x:Property Name="out_strMailSubject" Type="OutArgument(x:String)" />
+    <x:Property Name="in_str저장경로_요청" Type="InArgument(x:String)" />
+    <x:Property Name="in_str저장경로_작업" Type="InArgument(x:String)" />
+    <x:Property Name="in_str저장경로_결과" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1104,8885</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1104,9170</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01_Init_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -139,7 +142,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. 수신한 메일에서 템플릿 파일을 내려받고, 처리항목을 추출한다.&#xA;2. 템플릿 파일을 복사하여, 결과파일을 생성한다.&#xA;- 파일명: 국립공원채용정보_(본인이름)&#xA;- 예시: 국립공원채용정보_정수진&#xA;- https://www.knps.or.kr/front/portal/recruit/recruitList.do?menuNo=7070064&#xA;3. 각 공원의 채용공고를 시트별로 작성한다.&#xA;(추출할 공원명 목록: 수신한 메일의 본문에서 가져올것)&#xA;4. &lt;채용진행중&gt; 시트에 진행현황== “진행중”인채용정보를기입한다.&#xA;5. &lt;채용진행중&gt; 시트에 기재한 DT를 메일본문에 삽입하고, 결과파일을 첨부하여 발송한다." DisplayName="_01_LoadData" sap:VirtualizedContainerService.HintSize="1008,8820" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. 수신한 메일에서 템플릿 파일을 내려받고, 처리항목을 추출한다.&#xA;2. 템플릿 파일을 복사하여, 결과파일을 생성한다.&#xA;- 파일명: 국립공원채용정보_(본인이름)&#xA;- 예시: 국립공원채용정보_정수진&#xA;- https://www.knps.or.kr/front/portal/recruit/recruitList.do?menuNo=7070064&#xA;3. 각 공원의 채용공고를 시트별로 작성한다.&#xA;(추출할 공원명 목록: 수신한 메일의 본문에서 가져올것)&#xA;4. &lt;채용진행중&gt; 시트에 진행현황== “진행중”인채용정보를기입한다.&#xA;5. &lt;채용진행중&gt; 시트에 기재한 DT를 메일본문에 삽입하고, 결과파일을 첨부하여 발송한다." DisplayName="_01_LoadData" sap:VirtualizedContainerService.HintSize="1008,9105" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrSearchList" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
@@ -150,7 +153,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="rpa.sj.jeong@gmail.com로부터 받은 메일 중 조건에 해당하는 메일을 읽어와서 첨부파일 저장&#xA;**조건에 해당하는 메일이 없을 경우에 대한 예외처리 필요" DisplayName="Read Email &amp; Get File | Sequence" sap:VirtualizedContainerService.HintSize="946,2127" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap2010:Annotation.AnnotationText="rpa.sj.jeong@gmail.com로부터 받은 메일 중 조건에 해당하는 메일을 읽어와서 첨부파일 저장&#xA;**조건에 해당하는 메일이 없을 경우에 대한 예외처리 필요" DisplayName="Read Email &amp; Get File | Sequence" sap:VirtualizedContainerService.HintSize="946,2412" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,7 +161,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="메일에서 엑셀파일 &amp; 검색목록 가져오기 | Sequence" sap:VirtualizedContainerService.HintSize="592,1463" sap2010:WorkflowViewState.IdRef="Sequence_58">
+      <Sequence DisplayName="메일에서 엑셀파일 &amp; 검색목록 가져오기 | Sequence" sap:VirtualizedContainerService.HintSize="592,1326" sap2010:WorkflowViewState.IdRef="Sequence_58">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Name="idx" />
         </Sequence.Variables>
@@ -168,7 +171,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <TryCatch sap2010:Annotation.AnnotationText="* 필터 조건&#xA;- 발신자 : rpa.sj.jeong@gmail.com &#xA;- 포함문자 : '2024/06/14'&#xA;- 메일폴더 : &quot;RPA&quot;&#xA;&#xA;* 출력 변수 : mailMessages" DisplayName="조건에 맞는 메일 찾기 | Try Catch" sap:VirtualizedContainerService.HintSize="530,457" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch sap2010:Annotation.AnnotationText="* 필터 조건&#xA;- 발신자 : rpa.sj.jeong@gmail.com &#xA;- 포함문자 : '2024/06/14'&#xA;- 메일폴더 : &quot;RPA&quot;&#xA;&#xA;* 출력 변수 : mailMessages" DisplayName="조건에 맞는 메일 찾기 | Try Catch" sap:VirtualizedContainerService.HintSize="530,320" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,10 +189,10 @@
             </ui:GetIMAPMailMessages>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="422,263" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -197,7 +200,7 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="416,193" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence sap:VirtualizedContainerService.HintSize="416,208" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,7 +288,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="* 필터 조건&#xA;- 확장자 : '*.xlsx'" DisplayName="Save Attachments" ExcludeInlineAttachments="False" Filter=".*\.xlsx$" FolderPath="C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\05.국립공원채용\1.요청" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_2" Message="[currentMailMessage]" OverwriteExisting="True">
+                <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="* 필터 조건&#xA;- 확장자 : '*.xlsx'" DisplayName="Save Attachments" ExcludeInlineAttachments="False" Filter=".*\.xlsx$" FolderPath="[in_str저장경로_요청]" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_2" Message="[currentMailMessage]" OverwriteExisting="True">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -305,7 +308,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEach>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="RPA_Repository [2.작업] 폴더 내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행&#xA;&#xA;&#xA;*파일 경로&#xA;원본파일 : RPA_Repository &gt; 05.국립공원채용 &gt; 1.요청&#xA;작업파일 : RPA_Repository &gt; 05.국립공원채용 &gt; 2.작업&#xA;최종파일 : RPA_Repository &gt; 05.국립공원채용 &gt; 3.결과" DisplayName="원본파일 복사한 후 폴더링 | Sequence" sap:VirtualizedContainerService.HintSize="592,502" sap2010:WorkflowViewState.IdRef="Sequence_59">
+      <Sequence sap2010:Annotation.AnnotationText="RPA_Repository [2.작업] 폴더 내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행&#xA;&#xA;&#xA;*파일 경로&#xA;원본파일 : RPA_Repository &gt; 05.국립공원채용 &gt; 1.요청&#xA;작업파일 : RPA_Repository &gt; 05.국립공원채용 &gt; 2.작업&#xA;최종파일 : RPA_Repository &gt; 05.국립공원채용 &gt; 3.결과" DisplayName="원본파일 복사한 후 폴더링 | Sequence" sap:VirtualizedContainerService.HintSize="592,924" sap2010:WorkflowViewState.IdRef="Sequence_59">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
         </Sequence.Variables>
@@ -316,19 +319,19 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:FileExistsX sap2010:Annotation.AnnotationText="[2. 작업] 폴더 내 동일한 파일이 이미 있는지 확인" DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="388,196" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\05.국립공원채용\2.작업\국립공원채용정보_박채연.xlsx">
+        <ui:FileExistsX sap2010:Annotation.AnnotationText="[2. 작업] 폴더 내 동일한 파일이 이미 있는지 확인" DisplayName="File Exists" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="450,99" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_str저장경로_작업 + &quot;\국립공원채용정보_박채연.xlsx&quot;]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:FileExistsX>
-        <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="388,48" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[fileExists]" sap:VirtualizedContainerService.HintSize="450,567" sap2010:WorkflowViewState.IdRef="If_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -341,7 +344,7 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CopyFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="시작 : 원본 파일(경로 + 파일명)&#xA;종료 : 대상 파일(경로 + 파일명)" Destination="C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\05.국립공원채용\2.작업\국립공원채용정보_박채연.xlsx" DisplayName="덮어쓰기 | Copy File" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\05.국립공원채용\1.요청\국립공원채용정보_Temp.xlsx">
+              <ui:CopyFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="시작 : 원본 파일(경로 + 파일명)&#xA;종료 : 대상 파일(경로 + 파일명)" Destination="[in_str저장경로_작업 + &quot;\국립공원채용정보_박채연.xlsx&quot;]" DisplayName="덮어쓰기 | Copy File" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[in_str저장경로_요청 + &quot;\국립공원채용정보_Temp.xlsx&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -361,7 +364,7 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CopyFile ContinueOnError="{x:Null}" Destination="C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\05.국립공원채용\2.작업\국립공원채용정보_박채연.xlsx" DisplayName="신규 생성 | Copy File" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\05.국립공원채용\1.요청\국립공원채용정보_Temp.xlsx">
+              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_str저장경로_작업 + &quot;\국립공원채용정보_박채연.xlsx&quot;]" DisplayName="신규 생성 | Copy File" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[in_str저장경로_요청 + &quot;\국립공원채용정보_Temp.xlsx&quot;]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>

@@ -1,0 +1,28 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "07-1_GetChosung.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strFrist&Sequence_1",
+        "list_chosung&Sequence_1",
+        "intIndex&Sequence_1",
+        "strUnicode&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "out_strInitialword"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

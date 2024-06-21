@@ -1,16 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_01_SendSMTPMail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_01_SendSMTPMail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strID" Type="InArgument(x:String)" />
     <x:Property Name="in_sstrPW" Type="InArgument(ss:SecureString)" />
-    <x:Property Name="in_dtOnGoing" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="in_mailMessages" Type="InArgument(scg:List(snm:MailMessage))" />
-    <x:Property Name="in_strMailSubject" Type="InArgument(x:String)" />
-    <x:Property Name="in_arrNoData" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_strDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_dtClient" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>955,3137</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1095,3023</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01_SendSMTPMail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -123,10 +121,9 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="최종 완성된 엑셀 파일을 SMTP 메일로 첨부파일과 함께 전송한다.&#xA;*메일 본문에는 완성된 Output 시트의 내용을 테이블 형태로 표기해준다." DisplayName="_01_SendSMTPMail" sap:VirtualizedContainerService.HintSize="857,3072" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="최종 완성된 엑셀 파일을 SMTP 메일로 첨부파일과 함께 전송한다.&#xA;*메일 본문에는 완성된 Output 시트의 내용을 테이블 형태로 표기해준다." DisplayName="_01_SendSMTPMail" sap:VirtualizedContainerService.HintSize="857,2958" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strContentHTML" />
-      <Variable x:TypeArguments="x:String" Name="strDate" />
       <Variable x:TypeArguments="x:String" Name="strBody" />
       <Variable x:TypeArguments="x:String" Name="strSubject" />
       <Variable x:TypeArguments="x:String" Name="strHeader" />
@@ -139,24 +136,25 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="제목 만들기 | Sequence" sap:VirtualizedContainerService.HintSize="795,747" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="제목 만들기 | Sequence" sap:VirtualizedContainerService.HintSize="795,633" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="메일제목" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_8">
         <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[strDate]</OutArgument>
+          <OutArgument x:TypeArguments="x:String">[strSubject]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[in_strMailSubject.Split(" ")(1).Trim]</InArgument>
+          <InArgument x:TypeArguments="x:String">RPA06_부동산공시가격</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage sap2010:Annotation.AnnotationText="날짜 확인용 로그" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;✅strDate : &quot; + strDate]">
+      <ui:LogMessage sap2010:Annotation.AnnotationText="날짜 확인용 로그" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;✅strDate : &quot; + in_strDate]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,15 +163,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_8">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[strSubject]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">RPA05_국립공원채용</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:LogMessage sap2010:Annotation.AnnotationText="제목 확인용 로그" DisplayName="제목 | Log Message" sap:VirtualizedContainerService.HintSize="434,195" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Format(&quot;{0} {1} {2}&quot;, strSubject, strDate, &quot;박채연&quot;)]">
+      <ui:LogMessage sap2010:Annotation.AnnotationText="제목 확인용 로그" DisplayName="제목 | Log Message" sap:VirtualizedContainerService.HintSize="434,195" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Format(&quot;{0} {1} {2}&quot;, strSubject, in_strDate, &quot;박채연&quot;)]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -198,8 +188,7 @@
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;html&gt;&lt;body&gt;
-&lt;span&gt;" + strDate + " " + strSubject + " " + "내용 전달드립니다.&lt;/span&gt;&lt;br&gt;
-&lt;span&gt;&lt;b&gt;" + String.Join(", ", in_arrNoData) + "&lt;/b&gt;은(는) 검색결과가 없습니다.&lt;/span&gt;&lt;br&gt;&lt;br&gt;"]</InArgument>
+&lt;span&gt;" + in_strDate + " " + strSubject + " " + "내용 전달드립니다.&lt;/span&gt;&lt;br&gt;&lt;br&gt;"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -225,10 +214,19 @@
           <Assign.Value>
             <InArgument x:TypeArguments="x:String" xml:space="preserve">&lt;table style='border-collapse: collapse; text-align: left;'&gt;
 &lt;tr&gt;
-	 &lt;th style='background-color: #CC6CE7; color: #FFFFFF; border: 1px solid #FFD7DD; padding: 8px;'&gt;구분&lt;/th&gt;
-	 &lt;th style='background-color: #CC6CE7; color: #FFFFFF; border: 1px solid #FFD7DD; padding: 8px;'&gt;공원명&lt;/th&gt;
-	 &lt;th style='background-color: #CC6CE7; color: #FFFFFF; border: 1px solid #FFD7DD; padding: 8px;'&gt;제목&lt;/th&gt;
-	 &lt;th style='background-color: #CC6CE7; color: #FFFFFF; border: 1px solid #FFD7DD; padding: 8px;'&gt;진행 현황&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;고객번호&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;고객명&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;대분류&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;중분류&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;소분류&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;단지명&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;동&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;호&lt;/th&gt;
+	 &lt;th style='background-color: #4D93D9; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;기준가격(￦)&lt;/th&gt;
+	 &lt;th style='background-color: #FFC000; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;공시기준일&lt;/th&gt;
+	 &lt;th style='background-color: #FFC000; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;공시기준일 가격(￦)&lt;/th&gt;
+	 &lt;th style='background-color: #FFC000; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;변동&lt;/th&gt;
+	 &lt;th style='background-color: #883AC2; color: #000000; border: 1px solid #666666; padding: 8px;'&gt;RPA&lt;/th&gt;
  &lt;/tr&gt;
  &lt;tr&gt;</InArgument>
           </Assign.Value>
@@ -276,7 +274,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtOnGoing]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="671,1075" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtClient]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="671,1075" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -293,7 +291,7 @@
                     <OutArgument x:TypeArguments="x:String">[strRowHTML]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">&lt;tr style='color: #CC6CE7; border: 1px solid #FFD7DD; padding: 8px;'&gt;</InArgument>
+                    <InArgument x:TypeArguments="x:String">&lt;tr style='color: #000000; border: 1px solid #666666; padding: 8px;'&gt;</InArgument>
                   </Assign.Value>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -303,7 +301,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="575,485" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, in_dtOnGoing.Columns.Count)]">
+                <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="575,485" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, in_dtClient.Columns.Count)]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:Int32">
                       <ActivityAction.Argument>
@@ -336,7 +334,7 @@
                                   <OutArgument x:TypeArguments="x:String">[strCellHTML]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">["&lt;td style='color: #CC6CE7; border: 1px solid #FFD7DD; padding: 8px;'&gt;" + strCellValue + "&lt;/td&gt;"]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">["&lt;td style='color: #000000; border: 1px solid #666666; padding: 8px;'&gt;" + strCellValue + "&lt;/td&gt;"]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
@@ -395,17 +393,17 @@
       </Sequence>
       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="733,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
-          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="416,283" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage sap2010:Annotation.AnnotationText="본문 확인용 로그" DisplayName="본문 | Log Message" sap:VirtualizedContainerService.HintSize="354,79" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(strBody + &quot;{0}&quot;, strContentHTML)]">
+            <ui:LogMessage sap2010:Annotation.AnnotationText="본문 확인용 로그" DisplayName="본문 | Log Message" sap:VirtualizedContainerService.HintSize="354,195" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[String.Format(strBody + &quot;{0}&quot;, strContentHTML)]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -420,12 +418,10 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
     </Sequence>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[String.Format(strBody + &quot;{0}&quot;, strContentHTML)]" DisplayName="Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="795,175" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&quot;{0} {1} {2}&quot;, strSubject, strDate, &quot;박채연&quot;)]" To="mangoperry2015@gmail.com">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[String.Format(strBody + &quot;{0}&quot;, strContentHTML)]" DisplayName="Send SMTP Mail Message" Email="[in_strID]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="795,175" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" SecurePassword="[in_sstrPW]" Server="smtp.gmail.com" Subject="[String.Format(&quot;{0} {1} {2}&quot;, strSubject, in_strDate, &quot;박채연&quot;)]" To="rpa.sj.jeong@gmail.com">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">
-            <Literal x:TypeArguments="x:String">C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\05.국립공원채용\3.결과\국립공원채용정보02_박채연.xlsx</Literal>
-          </InArgument>
+          <InArgument x:TypeArguments="x:String">["C:\Users\ICT CoC\Documents\UiPath\RPA_Repository\06.부동산공시가격\3.결과\부동산공시_" + in_strDate + "_박채연.xlsx"]</InArgument>
         </scg:List>
       </ui:SendMail.Files>
     </ui:SendMail>

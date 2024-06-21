@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1070,812" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1095,1011" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -27,6 +27,10 @@
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Security</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -65,12 +69,33 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. 템플릿 파일을 복사하여, 결과파일을 생성한다.&#xD;&#xA;-파일명: 부동산공시_(오늘날짜)_(본인이름)&#xD;&#xA;-예시: 부동산공시_20240619_정수진&#xD;&#xA;&#xD;&#xA;&quot;회원목록&quot; 시트의 DT 생성&#xD;&#xA;0 : 고객번호&#xD;&#xA;1 : 고객명&#xD;&#xA;2 : 대분류 (시도)  == 시/도 선택&#xD;&#xA;3 : 중분류 (구)  == 시/군/구 선택&#xD;&#xA;4 : 소분류 (도로명)  == &#xD;&#xA;5 : 단지명&#xD;&#xA;6 : 동&#xD;&#xA;7 : 호&#xD;&#xA;8 : 기준가격(￦)&#xD;&#xA;9 : 공시기준일&#xD;&#xA;10 : 공시기준일 가격(￦)&#xD;&#xA;11 : 변동&#xD;&#xA;12 : RPA&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;2. 상기 페이지에 접근하여, 작업지시서 내역을 검색한다.&#xD;&#xA;https://www.realtyprice.kr/notice/town/searchPastYear.htm&#xD;&#xA;&#xD;&#xA;3. 공시기준일과 가격을 가져온다. (가격이 없는 경우, 정보없음 기입)&#xD;&#xA;&#xD;&#xA;4. 추출한 데이터를 결과파일의 “Result”시트에 기입한다.&#xD;&#xA;&#xD;&#xA;5. 엑셀파일을 첨부하여 메일을 발송한다." DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,535" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. 템플릿 파일을 복사하여, 결과파일을 생성한다.&#xA;-파일명: 부동산공시_(오늘날짜)_(본인이름)&#xA;-예시: 부동산공시_20240619_정수진&#xA;&#xA;&quot;회원목록&quot; 시트의 DT 생성&#xA;0 : 고객번호&#xA;1 : 고객명&#xA;2 : 대분류 (시도)  == 시/도 선택&#xA;3 : 중분류 (구)  == 시/군/구 선택&#xA;4 : 소분류 (도로명)  == &#xA;5 : 단지명&#xA;6 : 동&#xA;7 : 호&#xA;8 : 기준가격(￦)&#xA;9 : 공시기준일&#xA;10 : 공시기준일 가격(￦)&#xA;11 : 변동&#xA;12 : RPA&#xA;&#xA;&#xA;2. 상기 페이지에 접근하여, 작업지시서 내역을 검색한다.&#xA;https://www.realtyprice.kr/notice/town/searchPastYear.htm&#xA;&#xA;3. 공시기준일과 가격을 가져온다. (가격이 없는 경우, 정보없음 기입)&#xA;&#xA;4. 추출한 데이터를 결과파일의 “Result”시트에 기입한다.&#xA;&#xA;5. 엑셀파일을 첨부하여 메일을 발송한다." DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,946" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_요청" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_작업" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_결과" />
+      <Variable x:TypeArguments="x:String" Name="strDate" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtClient" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -78,5 +103,52 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="00_Variables - Invoke Workflow File (Jobs\00_Variables.xaml)" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Jobs\00_Variables.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strID">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strID" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_sstrPW">
+          <VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_요청">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_요청" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_작업">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_결과">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strDate">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDate" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\02_ProcessData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Jobs\02_ProcessData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_요청">[str저장경로_요청]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">[str저장경로_작업]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDate">[strDate]</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtClient">[dtClient]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">[str저장경로_결과]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\01_SendSMTPMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Mail\01_SendSMTPMail.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strID">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
+        </InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
+          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDate">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDate" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtClient">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtClient" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

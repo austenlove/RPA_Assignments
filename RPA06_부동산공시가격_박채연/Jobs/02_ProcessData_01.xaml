@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1202,6506</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1106,6397</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_02_ProcessData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -135,13 +135,13 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_02_ProcessData" sap:VirtualizedContainerService.HintSize="1212,6441" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_ProcessData" sap:VirtualizedContainerService.HintSize="1116,6332" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="RPA_Repository [2.작업] 폴더 내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행&#xA;&#xA;&#xA;*파일 경로&#xA;원본파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 1.요청&#xA;작업파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 2.작업&#xA;최종파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 3.결과" DisplayName="Get File | Sequence" sap:VirtualizedContainerService.HintSize="1150,204" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap2010:Annotation.AnnotationText="RPA_Repository [2.작업] 폴더 내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행&#xA;&#xA;&#xA;*파일 경로&#xA;원본파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 1.요청&#xA;작업파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 2.작업&#xA;최종파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 3.결과" DisplayName="Get File | Sequence" sap:VirtualizedContainerService.HintSize="1054,204" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
       </Sequence.Variables>
@@ -209,7 +209,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <Sequence DisplayName="Create DT &amp; Result Sheet(.xlsx) | Sequence" sap:VirtualizedContainerService.HintSize="1150,57" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="Create DT &amp; Result Sheet(.xlsx) | Sequence" sap:VirtualizedContainerService.HintSize="1054,57" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -235,25 +235,25 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 부동산공시가격 알리미" sap:VirtualizedContainerService.HintSize="1150,5654" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="935c2df2-c493-4b73-9076-2767ef98311c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 부동산공시가격 알리미" sap:VirtualizedContainerService.HintSize="1054,5547" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="935c2df2-c493-4b73-9076-2767ef98311c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1020,5405" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1020,5298" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtClient]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="958,5315" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtClient]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="958,5208" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="924,5126" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="924,5019" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Default="str시도" Name="str시도" />
                       <Variable x:TypeArguments="x:String" Name="str구" />
@@ -928,7 +928,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
                     </Sequence>
-                    <Sequence DisplayName="단지명 입력 및 결과 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,3925" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                    <Sequence DisplayName="단지명 입력 및 결과 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,3818" sap2010:WorkflowViewState.IdRef="Sequence_56">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uiOptions단지명" />
                       </Sequence.Variables>
@@ -1018,13 +1018,13 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="800,3162" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[uiOptions단지명]">
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentOption단지명" sap:VirtualizedContainerService.HintSize="800,3055" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[uiOptions단지명]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="ui:UiElement">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentOption단지명" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="766,2966" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="766,2909" sap2010:WorkflowViewState.IdRef="Sequence_74">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="str단지명검색결과" />
                               </Sequence.Variables>
@@ -1124,7 +1124,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </Delay>
-                              <Sequence DisplayName="동 OPTION 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="704,2057" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                              <Sequence DisplayName="동 OPTION 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="704,2000" sap2010:WorkflowViewState.IdRef="Sequence_57">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uiOptions동" />
                                 </Sequence.Variables>
@@ -1160,7 +1160,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:FindChildren>
-                                <If sap2010:Annotation.AnnotationText="uiOptions동.Count &lt;= 1  And str단지명검색결과.Contains(str동)" Condition="[uiOptions동.Count &lt;= 1  And str단지명검색결과.Contains(str동)]" DisplayName="&quot;동명없음&quot;인 경우와 아닌 경우 실행 조건 | If" sap:VirtualizedContainerService.HintSize="642,1832" sap2010:WorkflowViewState.IdRef="If_15">
+                                <If sap2010:Annotation.AnnotationText="uiOptions동.Count &lt;= 1  And str단지명검색결과.Contains(str동)" Condition="[uiOptions동.Count &lt;= 1  And str단지명검색결과.Contains(str동)]" DisplayName="&quot;동명없음&quot;인 경우와 아닌 경우 실행 조건 | If" sap:VirtualizedContainerService.HintSize="642,1775" sap2010:WorkflowViewState.IdRef="If_15">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1206,7 +1206,7 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap2010:Annotation.AnnotationText="동을 순회하며 str동과 동일한 option 찾아서 클릭 break" DisplayName="uiOptions동을 순회 | Else" sap:VirtualizedContainerService.HintSize="608,1334" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                    <Sequence sap2010:Annotation.AnnotationText="동을 순회하며 str동과 동일한 option 찾아서 클릭 break" DisplayName="uiOptions동을 순회 | Else" sap:VirtualizedContainerService.HintSize="608,1277" sap2010:WorkflowViewState.IdRef="Sequence_64">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1214,13 +1214,13 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="546,1215" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[uiOptions동]">
+                                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentOption동" sap:VirtualizedContainerService.HintSize="546,1158" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[uiOptions동]">
                                         <ui:ForEach.Body>
                                           <ActivityAction x:TypeArguments="ui:UiElement">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentOption동" />
                                             </ActivityAction.Argument>
-                                            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="동 | 본문" sap:VirtualizedContainerService.HintSize="512,1026" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                                            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="동 | 본문" sap:VirtualizedContainerService.HintSize="512,1021" sap2010:WorkflowViewState.IdRef="Sequence_58">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="strOption" />
                                               </Sequence.Variables>
@@ -1231,7 +1231,7 @@
                                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;✅currentOption동.Get('aaname') : &quot; + currentOption동.Get(&quot;aaname&quot;).ToString]">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;✅currentOption동.Get('aaname') : &quot; + currentOption동.Get(&quot;aaname&quot;).ToString]">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1239,7 +1239,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:LogMessage>
-                                              <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="aaname" DisplayName="Get Attribute 'OPTION'" sap:VirtualizedContainerService.HintSize="450,237" sap2010:WorkflowViewState.IdRef="GetAttribute_7">
+                                              <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="aaname" DisplayName="Get Attribute 'OPTION'" sap:VirtualizedContainerService.HintSize="450,235" sap2010:WorkflowViewState.IdRef="GetAttribute_7">
                                                 <ui:GetAttribute.Result>
                                                   <OutArgument x:TypeArguments="x:String">[strOption]</OutArgument>
                                                 </ui:GetAttribute.Result>
@@ -1260,7 +1260,7 @@
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:GetAttribute>
-                                              <If Condition="[strOption.Contains(str동)]" DisplayName="동 유효성 검사 | If" sap:VirtualizedContainerService.HintSize="450,493" sap2010:WorkflowViewState.IdRef="If_13">
+                                              <If Condition="[strOption.Contains(str동)]" DisplayName="동 유효성 검사 | If" sap:VirtualizedContainerService.HintSize="450,492" sap2010:WorkflowViewState.IdRef="If_13">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1594,13 +1594,7 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <uix:NGetText DisplayName="Get Text 'str공시기준일'" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="935c2df2-c493-4b73-9076-2767ef98311c" TextString="[str공시기준일]" Version="V3">
                               <uix:NGetText.Target>
-                                <uix:TargetAnchorable BrowserURL="https://www.realtyprice.kr/notice/town/searchPastYear.htm" DesignTimeRectangle="622, 588, 95, 77" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="63003eff-d5dd-46b7-bc2c-84229432792f" ImageBase64="" InformativeScreenshot="57ca7c68182b0b25433b6db403d1ba4d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='NOTICE' title='부동산공시가격 알리미' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
-                                  <uix:TargetAnchorable.Anchors>
-                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="622, 539, 95, 49" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='공시기준' check:innerText='공시기준' /&gt;" Guid="7b1c5d3f-07aa-4cf8-919c-924d59d2f73e" SearchSteps="Selector, FuzzySelector" />
-                                    </scg:List>
-                                  </uix:TargetAnchorable.Anchors>
-                                </uix:TargetAnchorable>
+                                <uix:TargetAnchorable BrowserURL="https://www.realtyprice.kr/notice/town/searchPastYear.htm" DesignTimeRectangle="691, 495, 76, 62" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="13e81c53-d368-4706-9394-8e0757c4bc5b" ImageBase64="" InformativeScreenshot="4d04e498df4940f0ad8065a319c802fa.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='NOTICE' title='부동산공시가격 알리미' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                               </uix:NGetText.Target>
                             </uix:NGetText>
                             <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -1633,13 +1627,7 @@
                       </If>
                       <uix:NCheckElement DelayBefore="0" DisplayName="Check Element '공시기준일가격'" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[has공시기준일가격]" ScopeIdentifier="935c2df2-c493-4b73-9076-2767ef98311c" Version="V3">
                         <uix:NCheckElement.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.realtyprice.kr/notice/town/searchPastYear.htm" DesignTimeRectangle="1440, 618, 74, 16" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' type='' tag='SPAN' class='' aaname='      59,000,000' check:innerText='59,000,000' /&gt;" Guid="30938aaa-4667-4384-bf21-8deadbd0f74c" ImageBase64="" InformativeScreenshot="30330be951d122c7882bd6848d2d51c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='NOTICE' title='부동산공시가격 알리미' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target DesignTimeRectangle="1382, 539, 190, 49" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl aaname='공동주택가격(원)' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl aaname='공동주택가격(원)' type='' tag='TH' class='' check:innerText='공동주택가격(원)' /&gt;" Guid="8dd91f27-ae4a-4c2a-8e38-ff799c9cf636" SearchSteps="Selector, FuzzySelector" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
+                          <uix:TargetAnchorable BrowserURL="https://www.realtyprice.kr/notice/town/searchPastYear.htm" DesignTimeRectangle="1346, 519, 56, 13" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' type='' tag='SPAN' class='' aaname='      54,100,000' check:innerText='54,100,000' /&gt;" Guid="404585b1-30d6-4645-9303-b0f527845581" ImageBase64="" InformativeScreenshot="49d14cfeab1a807ec61318a797559954.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='NOTICE' title='부동산공시가격 알리미' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                         </uix:NCheckElement.Target>
                       </uix:NCheckElement>
                       <If Condition="[has공시기준일가격]" sap:VirtualizedContainerService.HintSize="530,736" sap2010:WorkflowViewState.IdRef="If_5">
@@ -1652,10 +1640,10 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <uix:NGetText DisplayName="Get Text 'str공시기준일가격'" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="935c2df2-c493-4b73-9076-2767ef98311c" TextString="[str공시기준일가격]" Version="V3">
                               <uix:NGetText.Target>
-                                <uix:TargetAnchorable BrowserURL="https://www.realtyprice.kr/notice/town/searchPastYear.htm" DesignTimeRectangle="1440, 618, 74, 16" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' type='' tag='SPAN' class='' /&gt;" Guid="19eba8ee-49a4-46db-b196-81792b4d6fbf" ImageBase64="" InformativeScreenshot="30330be951d122c7882bd6848d2d51c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='NOTICE' title='부동산공시가격 알리미' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
+                                <uix:TargetAnchorable BrowserURL="https://www.realtyprice.kr/notice/town/searchPastYear.htm" DesignTimeRectangle="1346, 519, 56, 13" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl id='opinNoticeAmt' type='' tag='SPAN' class='' /&gt;" Guid="19eba8ee-49a4-46db-b196-81792b4d6fbf" ImageBase64="" InformativeScreenshot="efd3f70173df9019dfcdca2ee7f6a206.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='NOTICE' title='부동산공시가격 알리미' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
                                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                      <uix:Target DesignTimeRectangle="1382, 539, 190, 49" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl aaname='공동주택가격(원)' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl aaname='공동주택가격(원)' type='' tag='TH' class='' check:innerText='공동주택가격(원)' /&gt;" Guid="c6dbf410-6d7d-40f8-9d1a-ff14e43209f9" SearchSteps="Selector, FuzzySelector" />
+                                      <uix:Target DesignTimeRectangle="1298, 455, 152, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl aaname='공동주택가격(원)' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='print_page' tag='TABLE' /&gt;&lt;webctrl aaname='공동주택가격(원)' type='' tag='TH' class='' check:innerText='공동주택가격(원)' /&gt;" Guid="c6dbf410-6d7d-40f8-9d1a-ff14e43209f9" SearchSteps="Selector, FuzzySelector" />
                                     </scg:List>
                                   </uix:TargetAnchorable.Anchors>
                                 </uix:TargetAnchorable>
@@ -1823,14 +1811,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <Sequence DisplayName="DT 기록 | Sequence" sap:VirtualizedContainerService.HintSize="1150,438" sap2010:WorkflowViewState.IdRef="Sequence_25">
+    <Sequence DisplayName="DT 기록 | Sequence" sap:VirtualizedContainerService.HintSize="1054,436" sap2010:WorkflowViewState.IdRef="Sequence_25">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[out_dtClient]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Result" WorkbookPath="[in_str저장경로_작업 + &quot;\부동산공시_&quot; + in_strDate + &quot;_박채연.xlsx&quot;]" />
-      <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_str저장경로_결과 + &quot;\부동산공시_&quot; + in_strDate + &quot;_박채연.xlsx&quot;]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="388,179" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[in_str저장경로_작업 + &quot;\부동산공시_&quot; + in_strDate + &quot;_박채연.xlsx&quot;]">
+      <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_str저장경로_결과 + &quot;\부동산공시_&quot; + in_strDate + &quot;_박채연.xlsx&quot;]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="388,177" sap2010:WorkflowViewState.IdRef="CopyFile_3" Overwrite="True" Path="[in_str저장경로_작업 + &quot;\부동산공시_&quot; + in_strDate + &quot;_박채연.xlsx&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>

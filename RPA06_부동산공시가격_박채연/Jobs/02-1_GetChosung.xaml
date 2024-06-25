@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>786.4,1049.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1120,921</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_03_1_GetChosung_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +114,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_03_1_GetChosung" sap:VirtualizedContainerService.HintSize="496,984.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_03_1_GetChosung" sap:VirtualizedContainerService.HintSize="496,856" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strFrist" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="list_chosung" />
@@ -126,15 +126,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;✅도로명 초성 추출 시작&quot;]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:LogMessage>
-    <Assign sap2010:Annotation.AnnotationText="chosungs = {&quot;ㄱ&quot;, &quot;ㄲ&quot;, &quot;ㄴ&quot;, &quot;ㄷ&quot;, &quot;ㄸ&quot;, &quot;ㄹ&quot;, &quot;ㅁ&quot;, &quot;ㅂ&quot;, &quot;ㅃ&quot;, &quot;ㅅ&quot;, &quot;ㅆ&quot;, &quot;ㅇ&quot; , &quot;ㅈ&quot;, &quot;ㅉ&quot;, &quot;ㅊ&quot;, &quot;ㅋ&quot;, &quot;ㅌ&quot;, &quot;ㅍ&quot;, &quot;ㅎ&quot;}&#xA;&#xA;jungsungs = {&quot;ㅏ&quot;, &quot;ㅐ&quot;, &quot;ㅑ&quot;, &quot;ㅒ&quot;, &quot;ㅓ&quot;, &quot;ㅔ&quot;, &quot;ㅕ&quot;, &quot;ㅖ&quot;, &quot;ㅗ&quot;, &quot;ㅘ&quot;, &quot;ㅙ&quot;, &quot;ㅚ&quot;, &quot;ㅛ&quot;, &quot;ㅜ&quot;, &quot;ㅝ&quot;, &quot;ㅞ&quot;, &quot;ㅟ&quot;, &quot;ㅠ&quot;, &quot;ㅡ&quot;, &quot;ㅢ&quot;, &quot;ㅣ&quot;}&#xA;&#xA;jongsungs = {&quot;&quot;, &quot;ㄱ&quot;, &quot;ㄲ&quot;, &quot;ㄳ&quot;, &quot;ㄴ&quot;, &quot;ㄵ&quot;, &quot;ㄶ&quot;, &quot;ㄷ&quot;, &quot;ㄹ&quot;, &quot;ㄺ&quot;, &quot;ㄻ&quot;, &quot;ㄼ&quot;, &quot;ㄽ&quot;, &quot;ㄾ&quot;, &quot;ㄿ&quot;, &quot;ㅀ&quot;, &quot;ㅁ&quot;, &quot;ㅂ&quot;, &quot;ㅄ&quot;, &quot;ㅅ&quot;, &quot;ㅆ&quot;, &quot;ㅇ&quot;, &quot;ㅈ&quot;, &quot;ㅊ&quot;, &quot;ㅋ&quot;, &quot;ㅌ&quot;, &quot;ㅍ&quot;, &quot;ㅎ&quot;}" sap:VirtualizedContainerService.HintSize="433.6,269.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="chosungs = {&quot;ㄱ&quot;, &quot;ㄲ&quot;, &quot;ㄴ&quot;, &quot;ㄷ&quot;, &quot;ㄸ&quot;, &quot;ㄹ&quot;, &quot;ㅁ&quot;, &quot;ㅂ&quot;, &quot;ㅃ&quot;, &quot;ㅅ&quot;, &quot;ㅆ&quot;, &quot;ㅇ&quot; , &quot;ㅈ&quot;, &quot;ㅉ&quot;, &quot;ㅊ&quot;, &quot;ㅋ&quot;, &quot;ㅌ&quot;, &quot;ㅍ&quot;, &quot;ㅎ&quot;}&#xA;&#xA;jungsungs = {&quot;ㅏ&quot;, &quot;ㅐ&quot;, &quot;ㅑ&quot;, &quot;ㅒ&quot;, &quot;ㅓ&quot;, &quot;ㅔ&quot;, &quot;ㅕ&quot;, &quot;ㅖ&quot;, &quot;ㅗ&quot;, &quot;ㅘ&quot;, &quot;ㅙ&quot;, &quot;ㅚ&quot;, &quot;ㅛ&quot;, &quot;ㅜ&quot;, &quot;ㅝ&quot;, &quot;ㅞ&quot;, &quot;ㅟ&quot;, &quot;ㅠ&quot;, &quot;ㅡ&quot;, &quot;ㅢ&quot;, &quot;ㅣ&quot;}&#xA;&#xA;jongsungs = {&quot;&quot;, &quot;ㄱ&quot;, &quot;ㄲ&quot;, &quot;ㄳ&quot;, &quot;ㄴ&quot;, &quot;ㄵ&quot;, &quot;ㄶ&quot;, &quot;ㄷ&quot;, &quot;ㄹ&quot;, &quot;ㄺ&quot;, &quot;ㄻ&quot;, &quot;ㄼ&quot;, &quot;ㄽ&quot;, &quot;ㄾ&quot;, &quot;ㄿ&quot;, &quot;ㅀ&quot;, &quot;ㅁ&quot;, &quot;ㅂ&quot;, &quot;ㅄ&quot;, &quot;ㅅ&quot;, &quot;ㅆ&quot;, &quot;ㅇ&quot;, &quot;ㅈ&quot;, &quot;ㅊ&quot;, &quot;ㅋ&quot;, &quot;ㅌ&quot;, &quot;ㅍ&quot;, &quot;ㅎ&quot;}" sap:VirtualizedContainerService.HintSize="434,261" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[list_chosung]</OutArgument>
       </Assign.To>
@@ -147,7 +139,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strFrist]</OutArgument>
       </Assign.To>
@@ -155,7 +147,7 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem(4).ToString.Chars(0).ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="512,1041.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -206,7 +198,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign sap2010:Annotation.AnnotationText="(초성 인덱스 * 21 + 중성 인덱스) * 28 + 종성 인덱스 + 0xAC00&#xA;&#xA;0xAC00 =&gt; 가, 44032&#xA;&#xA;chosung = (Unicode - 44032 ) / 28 / 21&#xA;jungsung = (Unicode - 44032 ) / 28 % 21&#xA;jongsung = (Unicode - 44032 ) % 28" sap:VirtualizedContainerService.HintSize="433.6,237.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap2010:Annotation.AnnotationText="(초성 인덱스 * 21 + 중성 인덱스) * 28 + 종성 인덱스 + 0xAC00&#xA;&#xA;0xAC00 =&gt; 가, 44032&#xA;&#xA;chosung = (Unicode - 44032 ) / 28 / 21&#xA;jungsung = (Unicode - 44032 ) / 28 % 21&#xA;jongsung = (Unicode - 44032 ) % 28" sap:VirtualizedContainerService.HintSize="434,231" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intIndex]</OutArgument>
       </Assign.To>
@@ -219,7 +211,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_strInitialword]</OutArgument>
       </Assign.To>
@@ -227,13 +219,5 @@
         <InArgument x:TypeArguments="x:String">[list_chosung(intIndex)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;✅도로명 초성 추출 종료&quot;]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:LogMessage>
   </Sequence>
 </Activity>

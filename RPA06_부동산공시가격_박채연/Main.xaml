@@ -87,7 +87,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. 템플릿 파일을 복사하여, 결과파일을 생성한다.&#xA;-파일명: 부동산공시_(오늘날짜)_(본인이름)&#xA;-예시: 부동산공시_20240619_정수진&#xA;&#xA;&quot;회원목록&quot; 시트의 DT 생성&#xA;0 : 고객번호&#xA;1 : 고객명&#xA;2 : 대분류 (시도)  == 시/도 선택&#xA;3 : 중분류 (구)  == 시/군/구 선택&#xA;4 : 소분류 (도로명)  == &#xA;5 : 단지명&#xA;6 : 동&#xA;7 : 호&#xA;8 : 기준가격(￦)&#xA;9 : 공시기준일&#xA;10 : 공시기준일 가격(￦)&#xA;11 : 변동&#xA;12 : RPA&#xA;&#xA;&#xA;2. 상기 페이지에 접근하여, 작업지시서 내역을 검색한다.&#xA;https://www.realtyprice.kr/notice/town/searchPastYear.htm&#xA;&#xA;3. 공시기준일과 가격을 가져온다. (가격이 없는 경우, 정보없음 기입)&#xA;&#xA;4. 추출한 데이터를 결과파일의 “Result”시트에 기입한다.&#xA;&#xA;5. 엑셀파일을 첨부하여 메일을 발송한다." DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,946" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. 템플릿 파일을 복사하여, 결과파일을 생성한다.&#xA;- 파일명: 부동산공시_(오늘날짜)_(본인이름)&#xA;- 예시: 부동산공시_20240619_정수진&#xA;&#xA;&quot;회원목록&quot; 시트의 DT 생성&#xA;0 : 고객번호&#xA;1 : 고객명&#xA;2 : 대분류 (시도)  == 시/도 선택&#xA;3 : 중분류 (구)  == 시/군/구 선택&#xA;4 : 소분류 (도로명)  == &#xA;5 : 단지명&#xA;6 : 동&#xA;7 : 호&#xA;8 : 기준가격(￦)&#xA;9 : 공시기준일&#xA;10 : 공시기준일 가격(￦)&#xA;11 : 변동&#xA;12 : RPA&#xA;&#xA;&#xA;2. 상기 페이지에 접근하여, 작업지시서 내역을 검색한다.&#xA;https://www.realtyprice.kr/notice/town/searchPastYear.htm&#xA;&#xA;3. 공시기준일과 가격을 가져온다. (가격이 없는 경우, 정보없음 기입)&#xA;&#xA;4. 추출한 데이터를 결과파일의 “Result”시트에 기입한다.&#xA;&#xA;5. 엑셀파일을 첨부하여 메일을 발송한다." DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,946" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
@@ -105,24 +105,12 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="00_Variables - Invoke Workflow File (Jobs\00_Variables.xaml)" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Jobs\00_Variables.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_strID">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strID" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_sstrPW">
-          <VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_요청">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_요청" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_작업">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_결과">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_strDate">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDate" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strID">[strID]</OutArgument>
+        <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_sstrPW">[sstrPW]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_요청">[str저장경로_요청]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_작업">[str저장경로_작업]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_결과">[str저장경로_결과]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strDate">[strDate]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\02_ProcessData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Jobs\02_ProcessData.xaml">
@@ -136,18 +124,10 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\01_SendSMTPMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Mail\01_SendSMTPMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
-        </InArgument>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
-          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strDate">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDate" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtClient">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtClient" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strID">[strID]</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">[sstrPW]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDate">[strDate]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtClient">[dtClient]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

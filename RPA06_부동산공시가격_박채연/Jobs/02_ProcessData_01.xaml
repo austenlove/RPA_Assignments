@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1106,6397</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1189,9396</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_02_ProcessData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -135,13 +135,13 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_02_ProcessData" sap:VirtualizedContainerService.HintSize="1116,6332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_02_ProcessData" sap:VirtualizedContainerService.HintSize="1116,9331" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="RPA_Repository [2.작업] 폴더 내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행&#xA;&#xA;&#xA;*파일 경로&#xA;원본파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 1.요청&#xA;작업파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 2.작업&#xA;최종파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 3.결과" DisplayName="Get File | Sequence" sap:VirtualizedContainerService.HintSize="1054,204" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence sap2010:Annotation.AnnotationText="RPA_Repository [2.작업] 폴더 내로 파일명 변경 및 이동&#xA;- 지정된 경로에 파일이 이미 존재할 경우 : 해당 파일로 진행&#xA;- 지정된 경로에 파일이 존재하지 않을 경우 : 새 파일 생성하여 진행&#xA;&#xA;&#xA;*파일 경로&#xA;원본파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 1.요청&#xA;작업파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 2.작업&#xA;최종파일 : RPA_Repository &gt; 06.부동산공시가격 &gt; 3.결과" DisplayName="Get File | Sequence" sap:VirtualizedContainerService.HintSize="1054,213" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
       </Sequence.Variables>
@@ -235,25 +235,25 @@
         </ui:ExcelApplicationScope.Body>
       </ui:ExcelApplicationScope>
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 부동산공시가격 알리미" sap:VirtualizedContainerService.HintSize="1054,5547" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="935c2df2-c493-4b73-9076-2767ef98311c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 부동산공시가격 알리미" sap:VirtualizedContainerService.HintSize="1054,8537" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="935c2df2-c493-4b73-9076-2767ef98311c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1020,5298" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1020,8287" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtClient]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="958,5208" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[out_dtClient]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="958,8197" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="924,5019" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="924,8006" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Default="str시도" Name="str시도" />
                       <Variable x:TypeArguments="x:String" Name="str구" />
@@ -275,7 +275,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign sap2010:Annotation.AnnotationText="- &quot;회원목록&quot; 시트에서  dtClient 생성&#xA;&#xA;0 : 고객번호&#xA;1 : 고객명&#xA;2 : 대분류  == 시/도 선택&#xA;3 : 중분류  == 시/군/구 선택&#xA;4 : 소분류  == 도로명 선택&#xA;5 : 단지명&#xA;6 : 동   (&lt;= null 일때 &quot;동명없음&quot; 으로 default 설정*****)&#xA;7 : 호&#xA;8 : 기준가격(￦)&#xA;9 : 공시기준일&#xA;10 : 공시기준일 가격(￦)&#xA;11 : 변동&#xA;12 : RPA&#xA;" DisplayName="컬럼별 변수 초기화 | Multiple Assign" sap:VirtualizedContainerService.HintSize="862,324" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign sap2010:Annotation.AnnotationText="- &quot;회원목록&quot; 시트에서  dtClient 생성&#xA;&#xA;0 : 고객번호&#xA;1 : 고객명&#xA;2 : 대분류  == 시/도 선택&#xA;3 : 중분류  == 시/군/구 선택&#xA;4 : 소분류  == 도로명 선택&#xA;5 : 단지명&#xA;6 : 동   (&lt;= null 일때 &quot;동명없음&quot; 으로 default 설정*****)&#xA;7 : 호&#xA;8 : 기준가격(￦)&#xA;9 : 공시기준일&#xA;10 : 공시기준일 가격(￦)&#xA;11 : 변동&#xA;12 : RPA&#xA;" DisplayName="컬럼별 변수 초기화 | Multiple Assign" sap:VirtualizedContainerService.HintSize="862,340" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -344,7 +344,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:MultipleAssign>
-                    <If sap2010:Annotation.AnnotationText="str동 == null인 경우 default값 &quot;동명없음&quot; 처리&#xA;" Condition="[str동 Is Nothing]" DisplayName="str동 == null인 경우 default 처리 | If" sap:VirtualizedContainerService.HintSize="862,114" sap2010:WorkflowViewState.IdRef="If_14">
+                    <If sap2010:Annotation.AnnotationText="str동 == null인 경우 default값 &quot;동명없음&quot; 처리&#xA;" Condition="[str동 Is Nothing]" DisplayName="str동 == null인 경우 default 처리 | If" sap:VirtualizedContainerService.HintSize="862,117" sap2010:WorkflowViewState.IdRef="If_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -381,13 +381,13 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <Sequence sap2010:Annotation.AnnotationText="Select &gt; Option을 순회&#xA;aaname 속성값 strOption == str시도 인 경우 &#xA;=&gt; 해당 옵션 Click 실행 후 반복문 break" DisplayName="시도 OPTION 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,114" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence sap2010:Annotation.AnnotationText="Select &gt; Option을 순회&#xA;aaname 속성값 strOption == str시도 인 경우 &#xA;=&gt; 해당 옵션 Click 실행 후 반복문 break" DisplayName="시도 OPTION 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,1560" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uiOptions" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
@@ -412,13 +412,13 @@
                           </ui:Target>
                         </ui:FindChildren.Target>
                       </ui:FindChildren>
-                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="546,1182" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[uiOptions]">
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="546,1184" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[uiOptions]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="ui:UiElement">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentOption" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="시도 for each | 본문" sap:VirtualizedContainerService.HintSize="512,993" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                            <Sequence DisplayName="시도 for each | 본문" sap:VirtualizedContainerService.HintSize="512,995" sap2010:WorkflowViewState.IdRef="Sequence_29">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="strOption" />
                               </Sequence.Variables>
@@ -427,7 +427,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;✅currentOption.Get('aaname') : &quot; + currentOption.Get(&quot;aaname&quot;).ToString]">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;✅currentOption.Get('aaname') : &quot; + currentOption.Get(&quot;aaname&quot;).ToString]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -512,17 +512,17 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
                     </Sequence>
-                    <Sequence DisplayName="시군구 OPTION 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,57" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <Sequence DisplayName="시군구 OPTION 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,1589" sap2010:WorkflowViewState.IdRef="Sequence_40">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uiOptions" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,175" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[str구]">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,177" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[str구]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -542,13 +542,13 @@
                           </ui:Target>
                         </ui:FindChildren.Target>
                       </ui:FindChildren>
-                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="546,968" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[uiOptions]">
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="546,1153" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[uiOptions]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="ui:UiElement">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentOption" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="시군구 for each | 본문" sap:VirtualizedContainerService.HintSize="512,781" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                            <Sequence DisplayName="시군구 for each | 본문" sap:VirtualizedContainerService.HintSize="512,964" sap2010:WorkflowViewState.IdRef="Sequence_39">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="strOption" />
                               </Sequence.Variables>
@@ -558,7 +558,7 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;✅currentOption.Get('aaname') : &quot; + currentOption.Get(&quot;aaname&quot;).ToString]">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;✅currentOption.Get('aaname') : &quot; + currentOption.Get(&quot;aaname&quot;).ToString]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -566,7 +566,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:LogMessage>
-                              <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="aaname" DisplayName="Get Attribute 'OPTION'" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
+                              <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="aaname" DisplayName="Get Attribute 'OPTION'" sap:VirtualizedContainerService.HintSize="450,237" sap2010:WorkflowViewState.IdRef="GetAttribute_3">
                                 <ui:GetAttribute.Result>
                                   <OutArgument x:TypeArguments="x:String">[strOption]</OutArgument>
                                 </ui:GetAttribute.Result>
@@ -582,12 +582,12 @@
                                 </ui:GetAttribute.Target>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:GetAttribute>
-                              <If Condition="[strOption.Equals(str구)]" sap:VirtualizedContainerService.HintSize="450,461" sap2010:WorkflowViewState.IdRef="If_9">
+                              <If Condition="[strOption.Equals(str구)]" sap:VirtualizedContainerService.HintSize="450,462" sap2010:WorkflowViewState.IdRef="If_9">
                                 <If.Then>
                                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,275" sap2010:WorkflowViewState.IdRef="Sequence_41">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -928,7 +928,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ForEach>
                     </Sequence>
-                    <Sequence DisplayName="단지명 입력 및 결과 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,3818" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                    <Sequence DisplayName="단지명 입력 및 결과 찾아서 클릭 | Sequence" sap:VirtualizedContainerService.HintSize="862,3808" sap2010:WorkflowViewState.IdRef="Sequence_56">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uiOptions단지명" />
                       </Sequence.Variables>
@@ -974,7 +974,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NTypeInto>
-                      <TryCatch DisplayName="단지명 검색결과 | Try Catch" sap:VirtualizedContainerService.HintSize="800,367" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                      <TryCatch DisplayName="단지명 검색결과 | Try Catch" sap:VirtualizedContainerService.HintSize="800,304" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1002,10 +1002,10 @@
                           </ui:FindChildren>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                          <Catch x:TypeArguments="s:NullReferenceException" sap:VirtualizedContainerService.HintSize="422,106" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -1013,18 +1013,26 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:NullReferenceException" Name="exception" />
                               </ActivityAction.Argument>
-                              <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="[&quot;⚠️해당 단지명으로 검색된 결과가 없습니다. 데이터를 확인하세요. &quot; + currentRow(&quot;고객번호&quot;).ToString]" />
+                              <Sequence sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,168" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Warn" Message="[&quot;⚠️해당 단지명으로 검색된 결과가 없습니다. 데이터를 확인하세요. &quot; + currentRow(&quot;고객번호&quot;).ToString]" />
+                              </Sequence>
                             </ActivityAction>
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentOption단지명" sap:VirtualizedContainerService.HintSize="800,3055" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[uiOptions단지명]">
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentOption단지명" sap:VirtualizedContainerService.HintSize="800,3108" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[uiOptions단지명]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="ui:UiElement">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentOption단지명" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="766,2909" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="766,2910" sap2010:WorkflowViewState.IdRef="Sequence_74">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="str단지명검색결과" />
                               </Sequence.Variables>
@@ -1034,7 +1042,7 @@
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap2010:Annotation.AnnotationText="str단지명검색결과" sap:VirtualizedContainerService.HintSize="704,145" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign sap2010:Annotation.AnnotationText="str단지명검색결과" sap:VirtualizedContainerService.HintSize="704,146" sap2010:WorkflowViewState.IdRef="Assign_7">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[str단지명검색결과]</OutArgument>
                                 </Assign.To>

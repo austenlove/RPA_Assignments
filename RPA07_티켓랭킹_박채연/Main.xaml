@@ -1,0 +1,213 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1253,812" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,690" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strID" />
+      <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="dtExtracted" />
+      <Variable x:TypeArguments="s:String[]" Name="arr항목" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_요청" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_작업" />
+      <Variable x:TypeArguments="x:String" Name="str저장경로_결과" />
+      <Variable x:TypeArguments="x:String" Name="str파일명" />
+      <Variable x:TypeArguments="x:String" Name="mailSubject" />
+      <Variable x:TypeArguments="x:String" Name="mailBody" />
+      <Variable x:TypeArguments="x:String" Name="strDate" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[new System.Data.DataTable]" Name="dtBest" />
+      <Variable x:TypeArguments="x:String" Name="mailTo" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="successList" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="failureList" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\00_Variables.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Jobs\00_Variables.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strID">[strID]</OutArgument>
+        <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_sstrPW">[sstrPW]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_요청">[str저장경로_요청]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_작업">[str저장경로_작업]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str저장경로_결과">[str저장경로_결과]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_str파일명">[str파일명]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtExtracted">[dtExtracted]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtBest">[dtBest]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_mailTo">[mailTo]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\01_GetIMAPMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Mail\01_GetIMAPMail.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strID">[strID]</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">[sstrPW]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_mailSubject">[mailSubject]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_mailBody">[mailBody]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strDate">[strDate]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_요청">[str저장경로_요청]</InArgument>
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_arr항목">[arr항목]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\01_GetData&amp;Process.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Jobs\01_GetData&amp;Process.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_요청">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_요청" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str파일명">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str파일명" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arr항목">
+          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="arr항목" />
+        </InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtExtracted">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtExtracted" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtBest">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtBest" />
+        </InOutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_successList">
+          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="successList" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_failureList">
+          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="failureList" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\02_SendSMTPMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Mail\02_SendSMTPMail.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strID">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
+        </InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
+          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDate">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDate" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtBest">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtBest" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="mailTo" />
+        </InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_successList">
+          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="successList" />
+        </InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_failureList">
+          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="failureList" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str파일명">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str파일명" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

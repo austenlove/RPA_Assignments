@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1253,812" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="972,931" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -99,7 +99,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,690" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. 템플릿 파일을 복사하여, 결과파일을 생성한다. &#xD;&#xA;- 파일명: 티켓랭킹_(오늘날짜)_(본인이름) &#xD;&#xA;- 예시: 티켓랭킹_240628_정수진 &#xD;&#xA;&#xD;&#xA;2. 수신한 메일에서 처리할 항목을 가져온다. &#xD;&#xA;- http://ticket.yes24.com/New/Rank/Ranking.aspx &#xD;&#xA;&#xD;&#xA;3. 주어진 항목별 티켓 랭킹을 추출하여 가공한다. &#xD;&#xA;&#xD;&#xA;4. 추출한 데이터를 결과 파일의 각 항목별 시트에 기입한다. &#xD;&#xA;&#xD;&#xA;5. 본문에 처리 항목의 성공/실패 여부를 기재하고, 엑셀 파일을 첨부하여 메일을 발송한다." DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="416,866" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strID" />
       <Variable x:TypeArguments="ss:SecureString" Name="sstrPW" />
@@ -149,64 +149,28 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Jobs\01_GetData&amp;Process.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Jobs\01_GetData&amp;Process.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_요청">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_요청" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_작업" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str파일명">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str파일명" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="in_arr항목">
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="arr항목" />
-        </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtExtracted">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtExtracted" />
-        </InOutArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtBest">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtBest" />
-        </InOutArgument>
-        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_successList">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="successList" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_failureList">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="failureList" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_요청">[str저장경로_요청]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_작업">[str저장경로_작업]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str파일명">[str파일명]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arr항목">[arr항목]</InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtExtracted">[dtExtracted]</InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dtBest">[dtBest]</InOutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_successList">[successList]</OutArgument>
+        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_failureList">[failureList]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">[str저장경로_결과]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail\02_SendSMTPMail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,136" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Mail\02_SendSMTPMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strID" />
-        </InArgument>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">
-          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="sstrPW" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strDate">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDate" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtBest">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtBest" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="mailTo" />
-        </InArgument>
-        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_successList">
-          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="successList" />
-        </InArgument>
-        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_failureList">
-          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="failureList" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str저장경로_결과" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str파일명">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str파일명" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strID">[strID]</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_sstrPW">[sstrPW]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDate">[strDate]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtBest">[dtBest]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_mailTo">[mailTo]</InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_successList">[successList]</InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_failureList">[failureList]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str저장경로_결과">[str저장경로_결과]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str파일명">[str파일명]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

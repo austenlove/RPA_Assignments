@@ -1,0 +1,67 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT상가업소정보_원본&Sequence_1",
+        "DT상가업소정보_가공&Sequence_1",
+        "DT상가업소정보_가공_일치&Sequence_1",
+        "DT상가업소정보_가공_불일치&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Jobs/02_ProcessDT.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_DT상가업소정보_원본",
+        "out_DT상가업소정보_가공"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Jobs/03_GetTransactionDT.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "postCode&Sequence_1",
+        "idx&Sequence_2",
+        "address&Sequence_2",
+        "isPostCodeExist&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_DT상가업소정보_가공"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Jobs/04_Verification.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "idx&Sequence_1",
+        "str도로명주소&Sequence_2",
+        "str검색된주소&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_DT상가업소정보_가공",
+        "out_DT상가업소정보_가공_일치",
+        "out_DT상가업소정보_가공_불일치"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

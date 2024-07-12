@@ -11,7 +11,17 @@
     {
       "Path": "Main.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "strID&Sequence_1",
+        "sstrPW&Sequence_1",
+        "dtOnGoing&Sequence_1",
+        "mailMessages&Sequence_1",
+        "strMailSubject&Sequence_1",
+        "str저장경로_요청&Sequence_1",
+        "str저장경로_작업&Sequence_1",
+        "str저장경로_결과&Sequence_1",
+        "arrNoData&Sequence_1"
+      ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -67,6 +77,63 @@
         "in_sstrPW",
         "in_str저장경로_결과",
         "io_dtSheet가공"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Jobs/01_LoadData_02.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrSearchList&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "strMailBody&Sequence_3",
+        "strMailSubject&Sequence_3",
+        "fileExists&Sequence_4",
+        "intTotalPage&Sequence_5",
+        "strTotalPage&Sequence_5",
+        "intPage&Sequence_6",
+        "isNextExists&Sequence_6",
+        "hasLastBtn&Sequence_6",
+        "FilterDataTable&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strID",
+        "in_sstrPW",
+        "out_mailMessages",
+        "out_strMailSubject",
+        "in_str저장경로_요청",
+        "in_str저장경로_작업",
+        "in_str저장경로_결과",
+        "out_dtOnGoing",
+        "out_arrNoData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Jobs/01_LoadData_전체목록.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrSearchList&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "idx&Sequence_58",
+        "strMailBody&Sequence_16",
+        "fileExists&Sequence_59",
+        "intTotalPage&Sequence_19",
+        "strTotalPage&Sequence_19",
+        "dtOnGoing&Sequence_19",
+        "intPage&Sequence_20",
+        "idx&Sequence_20",
+        "isNextExists&Sequence_20",
+        "hasLastBtn&Sequence_20",
+        "FilterDataTable&Sequence_20"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dtOnGoing",
+        "in_strID",
+        "in_sstrPW",
+        "out_mailMessages"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
